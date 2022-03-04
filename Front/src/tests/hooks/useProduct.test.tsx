@@ -9,6 +9,9 @@ const server = setupServer(
     rest.get(`${endpoint}/product/20`, (req, res, ctx) => {
         return res(ctx.json(mockedProduct))
     }),
+    rest.post(`${endpoint}/cart/20`, (req, res, ctx) => {
+        return res(ctx.json({}));
+    }),
 )
 
 beforeAll(() => server.listen());

@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ApiTest extends WebTestCase
+class DefaultControllerTest extends WebTestCase
 {
-    public function testApiHome(): void
+    public function testHomePageController(): void
     {
         $client = static::createClient();
         // Request a specific page
-        $client->jsonRequest('GET', '/api/');
+        $client->jsonRequest('GET', '/');
         $response = $client->getResponse();
         $this->assertResponseIsSuccessful();
         $this->assertJson($response->getContent());
         $responseData = json_decode($response->getContent(), true);
-        $this->assertEquals(['message' => "Hello world"], $responseData);
+        $this->assertEquals(['message' => "Hello"], $responseData);
     }
 }

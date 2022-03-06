@@ -13,8 +13,8 @@ use App\Service\RickAndMortyApiService;
 class AppFixtures extends Fixture
 {
     private RickAndMortyApiService $rickAndMortyService;
-    private $prices = ["8", "9,99", "15", "16.50", "20"];
-    private $quantites = [0, 2,5,20,30,70];
+    private $prices = ["8"];
+    private $quantites = [20];
 
     public function __construct(RickAndMortyApiService $rickAndMortyService)
     {
